@@ -4,19 +4,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.mesh</groupId>
-  <artifactId>mesh-web</artifactId>
+  <groupId>com.open.manus.java</groupId>
+  <artifactId>openManus-web</artifactId>
   <version>${revision}</version>
   <parent>
-    <groupId>com.mesh</groupId>
-    <artifactId>mesh-vertx</artifactId>
+    <groupId>com.open.manus.java</groupId>
+    <artifactId>openManus-vertx</artifactId>
     <version>${revision}</version>
   </parent>
 
 
   <dependencies>
     <dependency>
-      <groupId>com.mesh</groupId>
+      <groupId>com.open.manus.java</groupId>
       <artifactId>web-core</artifactId>
     </dependency>
 

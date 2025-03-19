@@ -4,14 +4,14 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.mesh</groupId>
-  <artifactId>mesh-vertx</artifactId>
+  <groupId>com.open.manus.java</groupId>
+  <artifactId>openManus-vertx</artifactId>
   <version>${revision}</version>
   <packaging>pom</packaging>
   <name>${project.artifactId}</name>
   <modules>
     <module>web-core</module>
-    <module>mesh-web</module>
+    <module>openManus-web</module>
   </modules>
 
 
@@ -104,7 +104,7 @@
       </dependency>
 
       <dependency>
-        <groupId>com.mesh</groupId>
+        <groupId>com.open.manus.java</groupId>
         <artifactId>web-core</artifactId>
         <version>${revision}</version>
       </dependency>
