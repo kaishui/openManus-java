@@ -1,0 +1,126 @@
+@startuml
+class User{
+    String id;
+    String username;
+    String email;
+    String department;
+    String functionalManager;
+    String entityManager;
+    String jobTitle;
+    String status;
+    String createdBy;
+    String updatedBy;
+    Date createdDate;
+    String lastModifiedBy;
+    Date lastModifiedDate;
+}
+
+ class GroupDefaultRole {
+    private String id;
+    private String groupName; // AD group name
+    private String roleId;
+    private String createdBy;
+    private String updatedBy;
+    private Date createdDate;
+    private String lastModifiedBy;
+    private Date lastModifiedDate;
+}
+
+class UserGroup{
+    String id;
+    String userId;
+    String groupName; // AD group
+    String description;
+    String createdBy;
+    String updatedBy;
+    Date createdDate;
+    String lastModifiedBy;
+    Date lastModifiedDate;
+}
+
+
+class Role{
+    String id;
+    String roleName;
+    String type;
+    boolean isApprover;
+    String description;
+    String createdBy;
+    String updatedBy;
+    Date createdDate;
+    String lastModifiedBy;
+    Date lastModifiedDate;
+}
+
+class UserRole{
+  String  userId;
+  String  roleId;
+  String  createdBy;
+  String  updatedBy;
+  Date    createdDate;
+  String  lastModifiedBy;
+}
+
+class Resource{
+    String id;
+    String name;
+    String permission; // eg: xxPage.button.view, xxPage.button.edit and GET /user/*
+    String type;
+    String description;
+    String createdBy;
+    String updatedBy;
+    Date createdDate;
+    String lastModifiedBy;
+    Date lastModifiedDate;
+}
+
+class RoleResource{
+    String roleId;
+    String resourceId;
+    String createdBy;
+    String updatedBy;
+    Date createdDate;
+    String lastModifiedBy;
+}
+
+class AttributeCondition{
+    String id;
+    String attributeName;
+    String expression; // jsonObject eg: [{from: "2025-01-01", to: "2025-01-02"}, {from: "2025-01-03", to: "2025-01-04"}, {date: "2025-01-05"}] , {jobStatus: "completed"}
+    String createdBy;
+    String updatedBy;
+    Date createdDate;
+    String lastModifiedBy;
+}
+
+class RoleAttributeCondition{
+    String roleId;
+    String attributeConditionId;
+    String createdBy;
+    String updatedBy;
+    Date createdDate;
+    String lastModifiedBy;
+}
+
+Class AuditLog{
+    String id;
+    String userId;
+    String action;
+    String description;
+    String createdBy;
+    String updatedBy;
+    Date createdDate;
+    String lastModifiedBy;
+}
+
+User "1" -- "*" UserGroup : has
+User "1" -- "*" UserRole : has
+UserRole "1" -- "*" Role : has
+Role "1" -- "*" RoleResource : has
+RoleResource "1" -- "*" Resource : has
+Role "1" -- "*" RoleAttributeCondition : has
+RoleAttributeCondition "1" -- "*" AttributeCondition : has
+
+
+
+@enduml
